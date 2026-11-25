@@ -36,6 +36,34 @@
 ### 📊 Career Analytics Dashboard
 
 
+## 📸 Application Screenshots
+
+### 1. Career Overview Dashboard
+![Career Overview](Screenshots/career-overview.png)
+
+### 2. Job Applications
+![Job Applications](Screenshots/Job%20Application.png)
+
+### 3. Application Pipeline Board
+![Pipeline Board](Screenshots/Pipeline%20Board.png)
+
+### 4. Interview Management
+![Interviews](Screenshots/Interview.png)
+
+### 5. Career Analytics
+![Career Analysis](Screenshots/Career%20Analysis.png)
+
+### 6. Application Deadlines
+![Deadlines](Screenshots/Deadlines.png)
+
+### 7. Email Sync
+![Email Sync](Screenshots/Email%20Sync.png)
+
+### 8. AI Resume Scanner
+![AI Resume Scanner](Screenshots/AI%20Resume%20Scanner.png)
+
+
+
 ## 🌟 Key Features
 
 ### 1. 🧩 1-Click Cross-Platform Chrome Extension (`extension/`)
