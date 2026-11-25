@@ -1,0 +1,51 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Maven Wrapper script for UNIX
+# ----------------------------------------------------------------------------
+
+set -e
+
+# OS specific support
+cygwin=false;
+darwin=false;
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+  Darwin*) darwin=true ;;
+esac
+
+if [ -z "$JAVA_HOME" ] ; then
+  if [ -d "/Library/Java/JavaVirtualMachines/jdk-26.jdk/Contents/Home" ] ; then
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-26.jdk/Contents/Home"
+  fi
+fi
+
+if [ -n "$JAVA_HOME" ] ; then
+  if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+    JAVACMD="$JAVA_HOME/jre/sh/java"
+  else
+    JAVACMD="$JAVA_HOME/bin/java"
+  fi
+else
+  JAVACMD="`which java 2>/dev/null || true`"
+fi
+
+if [ ! -x "$JAVACMD" ] ; then
+  echo "Error: JAVA_HOME is not defined correctly." >&2
+  echo "  We cannot execute $JAVACMD" >&2
+  exit 1
+fi
+
+BASE_DIR=`dirname "$0"`
+WRAPPER_JAR="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"
+WRAPPER_PROP="$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"
+
+if which mvn >/dev/null 2>&1; then
+  exec mvn "$@"
+fi
+
+if [ -r "$WRAPPER_JAR" ]; then
+  exec "$JAVACMD" -jar "$WRAPPER_JAR" "$@"
+else
+  echo "System Maven not found. Please install Maven ('brew install maven') or run via Docker ('docker compose up')."
+  exit 1
+fi

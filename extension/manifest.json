@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "JobPulse PRO - 1-Click Job Clipper",
+  "version": "1.0.0",
+  "description": "Automatically capture job postings from LinkedIn, Indeed, Greenhouse, Lever, and Naukri with 1 click.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "https://*.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "https://*.greenhouse.io/*",
+    "https://*.lever.co/*",
+    "https://*.naukri.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "JobPulse 1-Click Clipper"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.indeed.com/*",
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.naukri.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
